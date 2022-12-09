@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Haskell Fundamentals</title>
+  <script src="index.js"></script>
+  <script>
+    window.onload = function() {
+      createNavigation();
+    }
+  </script>  
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      margin-left: 230px;
+    }
+  </style>  
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="haskell-fundamentals">Haskell Fundamentals</h1>
+<h2 id="course-outline">Course Outline</h2>
+<ul>
+<li>Introduction to functional programming and Haskell
+<ul>
+<li>What is functional programming?</li>
+<li>Why learn Haskell?</li>
+</ul></li>
+<li>Getting started with Haskell
+<ul>
+<li>Setting up the Haskell environment</li>
+<li>Hello World!</li>
+</ul></li>
+<li>Basic syntax
+<ul>
+<li>Functions and function calls
+<ul>
+<li>Function composition</li>
+<li>Higher-order functions</li>
+</ul></li>
+<li>Variables and binding</li>
+<li>Comments and whitespace</li>
+</ul></li>
+<li>I/O and error handling
+<ul>
+<li>Basic input and output</li>
+<li>Handling errors with Maybe and Either</li>
+</ul></li>
+<li>Basic types and operators
+<ul>
+<li>Built-in data types</li>
+<li>Basic operators and functions</li>
+</ul></li>
+<li>Working with data
+<ul>
+<li>Lists and list operations</li>
+<li>List comprehensions</li>
+<li>Higher-order functions for working with lists (map, fold,
+filter)</li>
+<li>Tuples</li>
+<li>Pattern matching</li>
+</ul></li>
+<li>Algebraic data types
+<ul>
+<li>Defining and using algebraic data types</li>
+<li>Data type hierarchies</li>
+<li>Type synonyms</li>
+</ul></li>
+<li>Modularity and code organization
+<ul>
+<li>Defining and using modules</li>
+<li>Import statements and qualified names</li>
+<li>Reusing code in larger projects</li>
+</ul></li>
+<li>Recursion and recursive data structures
+<ul>
+<li>Recursive functions</li>
+<li>Lists and trees as recursive data structures</li>
+</ul></li>
+<li>Type classes and polymorphism
+<ul>
+<li>What are type classes?</li>
+<li>Defining and using type classes</li>
+<li>Polymorphic functions</li>
+<li>Type signatures and their role in ensuring correct behavior</li>
+</ul></li>
+<li>Concurrency
+<ul>
+<li>Basics of concurrent programming in Haskell</li>
+<li>Working with threads and concurrent data structures</li>
+</ul></li>
+<li>Advanced concepts
+<ul>
+<li>Monads</li>
+<li>Lazy evaluation</li>
+<li>Performance optimization</li>
+</ul></li>
+<li>Testing and debugging
+<ul>
+<li>Writing unit tests for Haskell code</li>
+<li>Debugging techniques and tools</li>
+</ul></li>
+<li>Putting it all together
+<ul>
+<li>Building a simple Haskell project (Blackjack)</li>
+<li>Tips and best practices for writing Haskell code</li>
+<li>Avoiding common mistakes when working with functional concepts</li>
+<li>Common performance issues and how to avoid them</li>
+</ul></li>
+</ul>
+<h1 id="introduction-to-functional-programming-and-haskell">Introduction
+to functional programming and Haskell</h1>
+<h2 id="what-is-functional-programming">What is Functional
+Programming?</h2>
+<p>Functional programming is a style of programming that is based on
+mathematical functions. In this type of programming, we write programs
+by defining and combining simple functions. This is different from other
+styles of programming, where we often write instructions that tell the
+computer what to do step by step.</p>
+<p>One of the key benefits of functional programming is that it can make
+our programs easier to understand and reason about. This is because
+functional programs are made up of small, modular pieces that can be
+tested and understood independently. This makes it easier to find and
+fix bugs, and to make changes to our programs without breaking them.</p>
+<p>Functional programming also allows us to write programs that are more
+concise and expressive. Because we can define and reuse functions, we
+can write programs that do more with less code. This can make our
+programs faster to write and easier to read and understand.</p>
+<p>Here is an example of a simple mathematical function in Haskell:</p>
+<pre><code>add x y = x + y</code></pre>
+<p>This function takes two numbers, x and y, and returns their sum. We
+can use this function by calling it with two arguments, like this:</p>
+<pre><code>add 3 4</code></pre>
+<p>This would return the result 7.</p>
+<p>In functional programming, we often define functions like this, and
+then combine them to create more complex programs. This allows us to
+break down our programs into small, manageable pieces that are easy to
+understand and work with.</p>
+<p>Overall, functional programming is a powerful and expressive way to
+write programs. It can help us create programs that are more reliable,
+easier to understand, and more concise. In this course, we will learn
+how to use the Haskell programming language to write functional
+programs.</p>
+<h2 id="why-learn-haskell">Why learn Haskell?</h2>
+<p>Haskell is a powerful and versatile programming language that has
+many benefits. Here are just a few reasons why you should learn
+Haskell:</p>
+<p>Haskell is a <strong>functional</strong> language, which means that
+it is designed to make it easy to write programs that manipulate data
+and perform complex operations. This makes Haskell a great choice for
+many types of applications, such as data analysis and machine
+learning.</p>
+<p>Haskell is <strong>concise</strong> and <strong>readable.</strong>
+Because Haskell is a functional language, you can often write programs
+in fewer lines of code than you would need in other languages. This
+means that you can write programs quickly and easily, and it’s easy for
+other people to understand your code.</p>
+<p>Haskell is <strong>type-safe</strong>. This means that the Haskell
+compiler will catch many common mistakes and bugs in your code, making
+it easier to write programs that work correctly.</p>
+<p>Haskell has a <strong>rich ecosystem</strong> of libraries and tools.
+This means that you can use Haskell to solve many different types of
+problems, and you can easily find code and libraries that can help you
+do so.</p>
+<p>Here’s an example of a simple Haskell program that calculates the
+average of a list of numbers:</p>
+<pre><code>average :: [Double] -&gt; Double
+average xs = sum xs / fromIntegral (length xs)</code></pre>
+<p>This program is only two lines long, but it’s powerful and easy to
+understand. It takes a list of numbers (xs) and calculates the average
+of those numbers. You can see how concise and readable the code is, even
+if you don’t know Haskell yet.</p>
+<p>Overall, learning Haskell is a great investment of your time and
+effort. It can open up new opportunities for you and help you become a
+better programmer.</p>
+<h1 id="getting-started-with-haskell">Getting started with Haskell</h1>
+<h2 id="setting-up-the-haskell-environment">Setting up the Haskell
+environment</h2>
+<p>To start writing Haskell programs, you’ll need to set up a Haskell
+development environment. This involves installing the Haskell compiler
+and a program called Stack that will help us manage Haskell
+projects.</p>
+<h3 id="installing-stack-on-mac-and-linux">Installing Stack on Mac and
+Linux</h3>
+<p>To install Stack on Mac or Linux, open a terminal and run the
+following command:</p>
+<p>curl -sSL <a href="https://get.haskellstack.org/"
+class="uri">https://get.haskellstack.org/</a> | sh</p>
+<p>This will download and run the Stack installation script, which will
+automatically install Stack on your computer.</p>
+<p>Once the installation is complete, you should be able to open a
+terminal and type stack –version to verify that Stack is installed and
+working correctly.</p>
+<h3 id="installing-stack-on-windows">Installing Stack on Windows</h3>
+<p>First, visit <a
+href="https://get.haskellstack.org/stable/windows-x86_64-installer.exe"
+class="uri">https://get.haskellstack.org/stable/windows-x86_64-installer.exe</a>
+in your web browser. This will download the Stack installation program
+to your computer.</p>
+<p>Once the download is complete, run the installer and follow the
+on-screen instructions to install Stack.</p>
+<p>Once the installation is complete, you should be able to open a
+command prompt or terminal and type stack –version to verify that Stack
+is installed and working correctly.</p>
+<h3 id="configuring-stack">Configuring Stack</h3>
+<p>Before you can use Stack to create Haskell projects, you’ll need to
+configure some basic settings in the ~/.stack/config.yaml file (on Mac
+and Linux) or the %APPDATA%\local\stack\config.yaml file (on Windows).
+This file controls settings such as your author name, email, and GitHub
+username.</p>
+<p>To configure these settings, open the ~/.stack/config.yaml file (on
+Mac and Linux) or the %APPDATA%\local\stack\config.yaml file (on
+Windows) in a text editor and find the following lines:</p>
+<pre><code>templates:
+  params:
+#    author-name:
+#    author-email:
+#    copyright:
+#    github-username:</code></pre>
+<p>Uncomment each line shown here by removing the ‘#’ symbol. Then add
+your information so that it looks like this:</p>
+<pre><code>templates:
+  params:
+    author-name: &lt;your-name&gt;
+    author-email: &lt;your-email&gt;
+    copyright: &#39;Copyright (c) &lt;year&gt; &lt;your-name&gt;&#39;
+    github-username: &lt;your-github-username&gt;</code></pre>
+<p>Replace &lt;your-name&gt;, &lt;your-email&gt;,
+&lt;your-github-username&gt;, and &lt;year&gt; with your own name,
+email, GitHub username, and the current year.</p>
+<h2 id="hello-world">Hello World!</h2>
+<p>Now that you have Stack installed and configured, you can use it to
+create a new Haskell project. This will create a new directory for your
+project and set up the necessary files and folders for you to start
+writing Haskell code.</p>
+<p>To create a new project, open a terminal and navigate to the
+directory where you want to create your project.</p>
+<p>Run the following command to create a new project using the
+simple-hcap template:</p>
+<pre><code>stack new hello-world simple-hcap</code></pre>
+<p>This will create a new directory called hello-world and set up all
+the necessary files and folders for you to start writing Haskell
+code.</p>
+<p>You can now navigate to the hello-world directory and open the
+src/Main.hs file. It should look like this:</p>
+<pre><code>module Main (main) where
+
+main :: IO ()
+main = do
+  putStrLn &quot;hello world&quot;</code></pre>
+<p>Now, you can run the project using the <code>stack run</code> or
+<code>stack ghci</code> commands.</p>
+<h3 id="running-a-project-with-stack-run">Running a project with stack
+run</h3>
+<p>The stack run command will compile and run your Haskell project. This
+is useful for testing and debugging your code, or for running simple
+programs that don’t require any additional input or interaction.</p>
+<p>To run your Haskell project with stack run, open a terminal and
+navigate to the directory where your project is located. Then, run the
+following command:</p>
+<pre><code>stack run</code></pre>
+<p>This will compile your project and run the main entry point of your
+program, which is typically defined in the app/Main.hs file. You should
+see your program output “hello world” in the terminal.</p>
+<h3 id="running-a-project-with-stack-ghci">Running a project with stack
+ghci</h3>
+<p>The stack ghci command will start an interactive Haskell REPL
+(read-eval-print loop) for your project. This is useful for
+experimenting with Haskell code and trying out new ideas.</p>
+<p>To run your Haskell project with stack ghci, open a terminal and
+navigate to the directory where your project is located. Then, run the
+following command:</p>
+<pre><code>stack ghci</code></pre>
+<p>This will start the Haskell REPL and load your project into it. You
+can then enter Haskell expressions and statements and see their results
+immediately. For example, you could try entering a simple arithmetic
+expression like 2 + 2 to see the result.</p>
+<p>The stack ghci command also allows you to load specific Haskell
+modules from your project. This is useful for testing and debugging
+specific parts of your code. To load a module, use the :l (short for
+“load”) command followed by the module name. For example, to load the
+Main module from the src directory, you would run the following
+command:</p>
+<pre><code>:l src/Main</code></pre>
+<p>This would load the App module and make its functions and data types
+available in the REPL. You can then call functions from the App module
+and see their results immediately.</p>
+<p>After loading src/Main, try running the main function like this:</p>
+<pre><code>main</code></pre>
+<p>Your program should then output “hello world” in the terminal.</p>
+<p>In summary, the stack run command is useful for running Haskell
+programs, while the stack ghci command is useful for experimenting with
+Haskell code and trying out new ideas. Both commands are essential tools
+for Haskell development.</p>
+<p>Congratulations! You have now set up a Haskell development
+environment and are ready to start writing Haskell programs.</p>
+<h1 id="basic-syntax">Basic syntax</h1>
+<h2 id="functions-and-function-calls">Functions and function calls</h2>
+<p>In Haskell, functions are one of the most important concepts to
+understand. A function is a piece of code that takes some input and
+produces some output based on that input. In Haskell, we can define our
+own functions and use them in our programs, just like we can use the
+built-in functions that are provided by the language.</p>
+<p>When we define a function in Haskell, we give it a name, specify the
+input it takes, and define what it does with that input. For example, we
+might define a function called double that takes a number and returns
+that number multiplied by 2. Here’s how we could define that
+function:</p>
+<pre><code>double x = x * 2</code></pre>
+<p>To call this function and use it in our program, we simply write its
+name followed by the input value we want to use. For example, if we want
+to double the number 4, we could write this:</p>
+<pre><code>double 4</code></pre>
+<p>This would return the value 8, because 4 * 2 = 8.</p>
+<p>In Haskell, we can also compose functions together to create new
+functions that do more complex things. For example, if we have a
+function double and a function triple that multiplies its input by 3, we
+can create a new function that first doubles its input and then triples
+it. Here’s how we could do that:</p>
+<pre><code>doubleAndTriple x = triple (double x)</code></pre>
+<p>We can also define functions that take other functions as input.
+These are called higher-order functions. For example, we might define a
+function that takes a function and an input value, applies the function
+to the input value, and then doubles the result. Here’s how we could do
+that:</p>
+<pre><code>applyAndDouble f x = double (f x)</code></pre>
+<p>Now, we can use this applyAndDouble function to apply a function of
+our choice to an input value and then double the result. For example, we
+could use it to double the result of calling the double function with
+the input value 4:</p>
+<pre><code>applyAndDouble double 4</code></pre>
+<p>This would return the value 16, because double 4 is 8, and 8 * 2 =
+16.</p>
+<p>When we define a function in Haskell, we can specify whether its
+input and output should be visible only within the function (this is
+called local scope) or whether they should be visible outside the
+function as well (this is called global scope). To define a function
+with local scope, we use the let keyword. For example, we could define a
+function with local scope like this:</p>
+<pre><code>let add x y = x + y</code></pre>
+<p>This function is only visible and usable within the block of code
+where it is defined. If we try to use it outside that block, Haskell
+will throw an error.</p>
+<p>On the other hand, if we want to define a function with global scope,
+we don’t use the let keyword. For example, we could define a global
+function like this:</p>
+<pre><code>add x y = x + y</code></pre>
+<p>This function is visible and usable throughout our program, not just
+within the block of code where it is defined.</p>
+<p>In summary, functions are a powerful and essential concept in
+Haskell. They allow us to define our own code that takes input and
+produces output based on that input. We can compose functions together
+to create more complex functions, and we can define higher-order
+functions.</p>
+</body>
+</html>
