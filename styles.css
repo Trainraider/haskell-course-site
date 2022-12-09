@@ -2,42 +2,10 @@ body {
     background: linear-gradient(to bottom, #00065c, #59005c);
     color: white;
     margin: 20px;
-  }
+}
   
-  h1, h2, h3 {
+h1, h2, h3 {
     margin: 20px 0;
     font-family: sans-serif;
     font-weight: bold;
-  }
-
-@media only screen and (max-width: 600px) {
-    body {
-      margin-left: 0;
-    }
-  
-    div.sidePanel {
-      position: static;
-      width: 100%;
-      height: auto;
-      overflow: hidden;
-    }
-  
-    div.sidePanel ul {
-      display: none;
-    }
-  
-    div.sidePanel:hover ul {
-      display: block;
-    }
-  
-    div.sidePanel:before {
-      content: "▶";
-      display: block;
-      color: white;
-      padding: 10px;
-      font-family: sans-serif;
-      font-weight: bold;
-    }
-  }
-  
-  
+}
