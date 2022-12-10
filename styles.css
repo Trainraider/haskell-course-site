@@ -2,7 +2,13 @@
 
 /* set the font to a modern, techy font */
 body {
+    background-color: #111;
+    color: #fff;
     font-family: 'Roboto', sans-serif;
+  }
+
+  h1, h2, h3 {
+    font-family: "Courier New", Courier, monospace;
   }
   
   /* add a padding around the page content */
@@ -28,35 +34,15 @@ body {
     display: block;
     padding: 10px;
     text-decoration: none;
-    color: #333;
+    color: #ccc;
+    font-family: "Courier New", Courier, monospace;
   }
   
   /* style the navigation links when they are hovered over */
   #navigation a:hover {
-    background-color: #eee;
+    background-color: #111;
   }
   
-  /* create a dark mode for the page by setting the background color to black and the text color to white */
-body.dark-mode {
-    background-color: black;
-    color: white;
-  }
-  
-  /* set the background color of the navigation pane to black in dark mode */
-  body.dark-mode #navigation {
-    background-color: black;
-  }
-  
-  /* set the color of the navigation links to white in dark mode */
-  body.dark-mode #navigation a {
-    color: white;
-  }
-  
-  /* set the background color of the navigation links to gray in dark mode when they are hovered over */
-  body.dark-mode #navigation a:hover {
-    background-color: #333;
-  }
-
 /* position the navigation pane to the left of the main content */
 #navigation {
     position: fixed;
@@ -68,4 +54,10 @@ body.dark-mode {
 #content {
     margin-left: 300px; /* set the margin to the width of the navigation pane */
 }
-  
+
+/* fix the position of the dark mode button on the top right side of the page */
+#dark-mode-button {
+    position: fixed;
+    top: 5;
+    right: 0;
+}
