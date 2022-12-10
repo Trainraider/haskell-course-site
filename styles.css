@@ -1,11 +1,71 @@
+/* CSS code for the page and dark mode */
+
+/* set the font to a modern, techy font */
 body {
-    background: linear-gradient(to bottom, #00065c, #59005c);
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* add a padding around the page content */
+  body > *:not(#navigation) {
+    padding: 20px;
+  }
+  
+  /* set the width of the navigation pane and make it scrollable */
+  #navigation {
+    width: 300px;
+    overflow-y: scroll;
+  }
+  
+  /* style the navigation list */
+  #navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* style the navigation links */
+  #navigation a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  /* style the navigation links when they are hovered over */
+  #navigation a:hover {
+    background-color: #eee;
+  }
+  
+  /* create a dark mode for the page by setting the background color to black and the text color to white */
+body.dark-mode {
+    background-color: black;
     color: white;
-    margin: 20px;
+  }
+  
+  /* set the background color of the navigation pane to black in dark mode */
+  body.dark-mode #navigation {
+    background-color: black;
+  }
+  
+  /* set the color of the navigation links to white in dark mode */
+  body.dark-mode #navigation a {
+    color: white;
+  }
+  
+  /* set the background color of the navigation links to gray in dark mode when they are hovered over */
+  body.dark-mode #navigation a:hover {
+    background-color: #333;
+  }
+
+/* position the navigation pane to the left of the main content */
+#navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: scroll;
+  }
+  
+#content {
+    margin-left: 300px; /* set the margin to the width of the navigation pane */
 }
   
-h1, h2, h3 {
-    margin: 20px 0;
-    font-family: sans-serif;
-    font-weight: bold;
-}

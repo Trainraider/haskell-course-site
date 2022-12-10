@@ -1,48 +1,44 @@
+// define a function that creates the navigation pane
 function createNavigation() {
-    const sidePanel = document.createElement('div');
-    sidePanel.style.position = 'fixed';
-    sidePanel.style.left = '0';
-    sidePanel.style.top = '0';
-    sidePanel.style.width = '200px';
-    sidePanel.style.height = '100%';
-    sidePanel.style.background = 'linear-gradient(to right, #00065c, #59005c)';
-    sidePanel.style.overflow = 'auto';
-  
-    const headers = document.querySelectorAll('h1, h2, h3');
-    for (let i = 0; i < headers.length; i++) {
-      const header = headers[i];
-      const link = document.createElement('a');
-      link.href = `#${header.id}`;
-      link.textContent = header.textContent;
-      link.style.display = 'block';
-      link.style.color = 'white';
-      link.style.padding = '10px';
-      link.style.fontFamily = 'sans-serif';
-      link.style.fontWeight = 'bold';
-  
-      if (header.tagName === 'H1') {
-        sidePanel.appendChild(link);
-      } else if (header.tagName === 'H2') {
-        const subList = document.createElement('ul');
-        subList.style.listStyle = 'none';
-        subList.style.paddingLeft = '20px';
-        const item = document.createElement('li');
-        item.appendChild(link);
-        subList.appendChild(item);
-        sidePanel.appendChild(subList);
-      } else if (header.tagName === 'H3') {
-        const subList = document.createElement('ul');
-        subList.style.listStyle = 'none';
-        subList.style.paddingLeft = '40px';
-        const item = document.createElement('li');
-        item.appendChild(link);
-        subList.appendChild(item);
-        sidePanel.appendChild(subList);
-      }
-    }
-  
-    document.body.appendChild(sidePanel);
+  // create an array to store the header elements
+  var headers = [];
+
+  // find all the h1, h2, and h3 elements on the page and add them to the headers array
+  headers = headers.concat(Array.from(document.querySelectorAll('h1')));
+  headers = headers.concat(Array.from(document.querySelectorAll('h2')));
+  headers = headers.concat(Array.from(document.querySelectorAll('h3')));
+
+  // create a container element for the navigation pane
+  var nav = document.createElement('div');
+  nav.id = 'navigation';
+
+  // add a shadow and rounded corners to the navigation pane
+  nav.style.boxShadow = '2px 2px 5px 0px rgba(0,0,0,0.75)';
+  nav.style.borderRadius = '5px 5px 0 0';
+
+  // create a list element to hold the header links
+  var navList = document.createElement('ul');
+
+  // loop through the headers array and create a list item and link for each header
+  for (var i = 0; i < headers.length; i++) {
+    // create the list item and link elements
+    var item = document.createElement('li');
+    var link = document.createElement('a');
+
+    // set the link's href attribute to the id of the header element
+    link.href = '#' + headers[i].id;
+
+    // set the link text to the header text
+    link.innerText = headers[i].innerText;
+
+    // append the link to the list item, and the list item to the navigation list
+    item.appendChild(link);
+    navList.appendChild(item);
   }
-  
-  createNavigation();
-  
+
+  // append the navigation list to the navigation pane
+  nav.appendChild(navList);
+
+  // insert the navigation pane into the page
+  document.body.insertBefore(nav, document.body.firstChild);
+}
