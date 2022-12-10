@@ -53,7 +53,7 @@ To start writing Haskell programs, you'll need to set up a Haskell development e
 
 To install Stack on Mac or Linux, open a terminal and run the following command:
 
-curl -sSL https://get.haskellstack.org/ | sh
+    curl -sSL https://get.haskellstack.org/ | sh
 
 This will download and run the Stack installation script, which will automatically install Stack on your computer.
 
@@ -69,9 +69,9 @@ Once the installation is complete, you should be able to open a command prompt o
 
 ### Configuring Stack
 
-Before you can use Stack to create Haskell projects, you'll need to configure some basic settings in the ~/.stack/config.yaml file (on Mac and Linux) or the %APPDATA%\local\stack\config.yaml file (on Windows). This file controls settings such as your author name, email, and GitHub username.
+Before you can use Stack to create Haskell projects, you'll need to configure some basic settings in the `~/.stack/config.yaml` file (on Mac and Linux) or the `%APPDATA%\local\stack\config.yaml` file (on Windows). This file controls settings such as your author name, email, and GitHub username.
 
-To configure these settings, open the ~/.stack/config.yaml file (on Mac and Linux) or the %APPDATA%\local\stack\config.yaml file (on Windows) in a text editor and find the following lines:
+To configure these settings, open the `~/.stack/config.yaml` file (on Mac and Linux) or the `%APPDATA%\local\stack\config.yaml` file (on Windows) in a text editor and find the following lines:
 
 ```
 templates:
@@ -107,7 +107,7 @@ Run the following command to create a new project using the simple-hcap template
 
 This will create a new directory called hello-world and set up all the necessary files and folders for you to start writing Haskell code.
 
-You can now navigate to the hello-world directory and open the src/Main.hs file. It should look like this:
+You can now navigate to the hello-world directory and open the `src/Main.hs` file. It should look like this:
 
 ```
 module Main (main) where
@@ -127,7 +127,7 @@ To run your Haskell project with stack run, open a terminal and navigate to the 
 
     stack run
 
-This will compile your project and run the main entry point of your program, which is typically defined in the app/Main.hs file. You should see your program output "hello world" in the terminal.
+This will compile your project and run the main entry point of your program, which is typically defined in the `src/Main.hs` file. You should see your program output "hello world" in the terminal.
 
 ### Running a project with stack ghci
 
@@ -137,15 +137,15 @@ To run your Haskell project with stack ghci, open a terminal and navigate to the
 
     stack ghci
 
-This will start the Haskell REPL and load your project into it. You can then enter Haskell expressions and statements and see their results immediately. For example, you could try entering a simple arithmetic expression like 2 + 2 to see the result.
+This will start the Haskell REPL and load your project into it. You can then enter Haskell expressions and statements and see their results immediately. For example, you could try entering a simple arithmetic expression like `2 + 2` to see the result.
 
-The stack ghci command also allows you to load specific Haskell modules from your project. This is useful for testing and debugging specific parts of your code. To load a module, use the :l (short for "load") command followed by the module name. For example, to load the Main module from the src directory, you would run the following command:
+The stack ghci command also allows you to load specific Haskell modules from your project. This is useful for testing and debugging specific parts of your code. To load a module, use the `:l` (short for "load") command followed by the module name. For example, to load the Main module from the src directory, you would run the following command:
 
     :l src/Main
 
-This would load the App module and make its functions and data types available in the REPL. You can then call functions from the App module and see their results immediately.
+This would load the Main module and make its functions and data types available in the REPL. You can then call functions from the App module and see their results immediately.
 
-After loading src/Main, try running the main function like this:
+After loading src/Main, try running the `main` function like this:
 
     main
 
