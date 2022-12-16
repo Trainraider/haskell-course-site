@@ -12,7 +12,7 @@ function createNavigation() {
 
   // add a shadow and rounded corners to the navigation pane
   nav.style.boxShadow = '2px 2px 5px 0px rgba(0,0,0,0.75)';
-  nav.style.borderRadius = '15px 15px 15px 0';
+  nav.style.borderRadius = '15px 15px 15px 15px';
 
   var headers = document.querySelectorAll('#content h1, #content h2, #content h3');
 
@@ -34,7 +34,7 @@ function createNavigation() {
 
       // set the link text to the header text
       link.innerText = elements[i].innerText;
-      wordWrapLPad(link, 180, headerLevel);
+      wordWrapLPad(link, 175, headerLevel);
       //link.innerText = elements[i].innerText;
 
       // add a style attribute to the list item to indent it based on the header level

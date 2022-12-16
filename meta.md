@@ -1,9 +1,12 @@
-Original Outline prompt:
+## Original Outline prompt:
 
+```
 Write an outline for a course to teach Haskell. The course should be structured according to modern teaching techniques to optimize for learning. The course should teach all the basic syntax and concepts to start writing useful programs in Haskell. Format the outline with Markdown. Put the whole thing in a code block.
+```
 
-Basic Section prompt:
+## Basic Section prompt:
 
+```
 Write out the "Declarations and scope" section. These are the requirements:
 
 * Use a "hands on" learning approach by having the reader to follow along in ghci throughout the section with each example.
@@ -14,11 +17,11 @@ Write out the "Declarations and scope" section. These are the requirements:
 ::a boat on a lake at sunset::
 
 You should use at least one image, to break up the wall of text if nothing else.
-
-# Haskell Fundamentals
+```
 
 ## Course Outline
 
+```
 * Introduction to functional programming and Haskell
 	* What is functional programming?
 	* Why learn Haskell?
@@ -77,3 +80,20 @@ You should use at least one image, to break up the wall of text if nothing else.
     * Tips and best practices for writing Haskell code
     * Avoiding common mistakes when working with functional concepts
     * Common performance issues and how to avoid them
+```
+
+## Example art prompt:
+
+### Positive:
+
+```
+A hacker woman at a computer typing and programming code, 80s japanese anime style, hand drawn, synthwave colors, vivid, slice of life, trending on artstation, masterpiece, extremely detailed, vintage
+```
+
+### Negative:
+
+```
+dull, deformed, mutated hands
+```
+
+model: sd 2.0 768
